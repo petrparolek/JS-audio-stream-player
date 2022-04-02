@@ -20,11 +20,7 @@
 <!-- if JS is not enabled -->
 <noscript>
     <div id="nojs_message">
-        <p>In order for this audio player to function, you need to have javascript enabled. If for any reason you do not
-            wish to use javascript, here is an
-            <ahref
-            ="stream.mp3">alternative link to an audio stream</a>.
-        </p>
+        <p>Bez zapnutého JavaScriptu stránka nebude správně fungovat.</p>
     </div>
 </noscript>
 <!-- main flex container -->
@@ -33,9 +29,7 @@
         <center>
             <a target="_blank" href="#" title="A custom link"></a>
             <div class="player">
-                <audio preload="metadata" id="audio">Your browser lacks javascript support, please make use of this
-                    alternative link https://audio.mp3>
-                </audio>
+                <audio preload="metadata" id="audio"></audio>
                 <!--<p id="umelec" title="Current playing artist">Current playing artist</p>
                 <p id="song" title="Current playing artist">Current playing song</p>-->
                 <p>Právě vysíláme</p>
@@ -52,7 +46,7 @@
                     <!-- wraps the play button and for js to listen to on click -->
                     <div class="loader"></div>
                     </h4>
-                    <div class="aroundbutton" alt="Run the stream" id="aroundbutton" title="Start the audio stream"
+                    <div class="aroundbutton" alt="Spustit radio" id="aroundbutton" title="Spustit radio"
                          style="cursor: pointer;">
                         <a class="playbutton">
                             <i class="fas fa-play fa-fw on" onclick="" id="on"></i>
@@ -60,7 +54,7 @@
                     </div>
                 </div>
 
-                <div class="quality" title="Higher quality">
+                <div class="quality" title="Vyšší kvalita audia">
                     <span class="iconify" data-icon="si-glyph:button-hd" data-inline="false"
                           style="line-height: 10px;color: rgb(178 44 37);margin: 0.455em 0.3em;font-size: 29px;display: table-cell;">></span></i>
                     <input type="checkbox" class="toggle" onclick="check()" id="quality" checked>
@@ -69,7 +63,7 @@
                 <!-- volume an quality controls-->
                 <span class="iconify" data-icon="fa:volume-down" data-inline="false"
                       style="color: #343434;height:14px"></span>
-                <input title="Volume" id="vol-control" type="range" min="0" max="100" step="1" value="100"
+                <input title="Hlasitost" id="vol-control" type="range" min="0" max="100" step="1" value="100"
                        oninput="SetVolume(this.value)" onchange="SetVolume(this.value)"></input>
                 <span class="iconify" data-icon="fa:volume-up" data-inline="false"
                       style="color: #343434;height:14px"></span>
@@ -111,10 +105,10 @@
             audio.load();
             audio.play();
             element.classList.remove("fa-play");
-            element.classList.add("fa-pause");
+            element.classList.add("fa-stop");
             checkBox.checked = true;
         } else {
-            element.classList.remove("fa-pause");
+            element.classList.remove("fa-top");
             element.classList.add("fa-play");
             audio.src = resetAudio;
             audio.pause();
@@ -133,7 +127,7 @@
             audio.load();
             audio.play();
             element.classList.remove("fa-play");
-            element.classList.add("fa-pause");
+            element.classList.add("fa-stop");
 
         } else {
             const radioSource = "https://icecast1.play.cz/radio7cz32.mp3" + "?" + Math.floor((Math.random() * 10000) + 1);
@@ -145,7 +139,7 @@
             audio.load();
             audio.play();
             element.classList.remove("fa-play");
-            element.classList.add("fa-pause");
+            element.classList.add("fa-stop");
         }
 
     }
@@ -185,7 +179,7 @@
 <script>
     document.getElementById('on').addEventListener('click', (evt) => {
         var element = document.getElementById("on");
-        element.classList.remove("fa-pause");
+        element.classList.remove("fa-stop");
         element.classList.add("fa-play");
     })
 </script>
