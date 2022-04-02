@@ -385,7 +385,7 @@ input[type="checkbox"]:focus {
 		border-bottom: 7px solid #8c1e18;
 	}
 	.flex_1 {
-		background: #232323;
+		background-color: #121212;;
 		box-shadow: none;
 	}
 	.iframe_reload {
