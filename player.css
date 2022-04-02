@@ -391,11 +391,14 @@ input[type="checkbox"]:focus {
 	.iframe_reload {
 		box-shadow: none;
 	}
-	.iconify {
-		color: whitesmoke !important;
-	}
 	.loader {
 		border: 3px solid #181a1b;
+	}
+	.background {
+		background-color: #121212;;
+	}
+	.player {
+		background-color: #121212;;
 	}
 
 	@media screen and (min-width: 1200px) {
