@@ -166,8 +166,11 @@
         document.getElementById('umelecs').innerHTML = JSON.parse(xmlHttp.responseText).artist;
     }
 
-    whatIsPlaying();
-    setInterval(whatIsPlaying, 10000); // 2s
+    setInterval(whatIsPlaying, 6000); // 6s
+
+    document.addEventListener("DOMContentLoaded", function() {
+        whatIsPlaying();
+    });
 </script>
 <script>
     document.getElementById('on').addEventListener('click', (evt) => {
