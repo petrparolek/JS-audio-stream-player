@@ -162,8 +162,8 @@
         xmlhttp.open("POST","https://m.radio7.cz/vysilame_utf8.php",true);
         xmlhttp.send();
 
-        document.getElementById('songs').innerHTML = JSON.parse(xmlHttp.responseText).song;
-        document.getElementById('umelecs').innerHTML = JSON.parse(xmlHttp.responseText).artist;
+        document.getElementById('songs').innerHTML = JSON.parse(xmlhttp.responseText).song;
+        document.getElementById('umelecs').innerHTML = JSON.parse(xmlhttp.responseText).artist;
     }
 
     setInterval(whatIsPlaying, 6000); // 6s
